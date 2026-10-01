@@ -1,0 +1,7 @@
+sFirst = input("Enter your first name:")
+sLast = input("Enter your last name:")
+sAddress = input("Enter address:")
+sCity = input("Enter city:")
+sState = input("Enter state:")
+sBirthYear = input("Enter birth year:")
+print(f"Thank you {sFirst} {sLast}, you live at {sAddress}, in {sCity} {sState} and in 2020 you were {2020 - int (sBirthYear)} years old.")
