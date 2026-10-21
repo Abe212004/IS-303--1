@@ -1,19 +1,15 @@
-# Author: Abe
-# Description: Helper functions for the Mystery Wordle game.
-#              main.py imports and uses these.
-
 import random
-
+ 
 # Secret words: all five letters, no repeated letters
 word_list = ["plant", "crane", "slate", "house", "brick",
              "light", "mouse", "ghost", "chair", "stone"]
-
-
+ 
+ 
 # Pick a random word from the list and return it
 def choose_word():
     return random.choice(word_list)
-
-
+ 
+ 
 # Ask for a guess until it is 5 letters, letters only, and not already used.
 # previous_guesses is the list of words the player has already tried.
 def get_guess(previous_guesses):
@@ -25,8 +21,8 @@ def get_guess(previous_guesses):
             print("You already guessed that word. Try a different one.")
         guess = input("Enter a five-letter word: ").lower().strip()
     return guess
-
-
+ 
+ 
 # Compare the guess to the secret word one position at a time.
 # Returns a list of 5 symbols: "G", "Y" or "-"
 def evaluate_guess(guess, secret_word):
@@ -39,14 +35,14 @@ def evaluate_guess(guess, secret_word):
         else:
             feedback.append("-")        # letter not in the word
     return feedback
-
-
+ 
+ 
 # Print the guess and its feedback with spaces between letters
 def display_guess(guess, feedback):
     print("Guess:", " ".join(guess.upper()))
     print("Feedback:", " ".join(feedback))
-
-
+ 
+ 
 # Return True if the guess matches the secret word, otherwise False
 def has_won(guess, secret_word):
     return guess == secret_word
